@@ -1,14 +1,16 @@
 <?php
 // Register Back-End script
 add_action('admin_enqueue_scripts', 'thost_register_back_end_scripts');
-function thost_register_back_end_scripts(){
+function thost_register_back_end_scripts(): void
+{
 	/* Start Get CSS Admin */
 	wp_enqueue_style( 'thost-admin-styles', get_theme_file_uri( '/admin/assets/css/admin-styles.css' ) );
 }
 
 // Remove jquery migrate
 add_action( 'wp_default_scripts', 'thost_remove_jquery_migrate' );
-function thost_remove_jquery_migrate( $scripts ) {
+function thost_remove_jquery_migrate( $scripts ): void
+{
 	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
 		$script = $scripts->registered['jquery'];
 		if ( $script->deps ) {
@@ -19,7 +21,8 @@ function thost_remove_jquery_migrate( $scripts ) {
 
 // Register Front-End Styles
 add_action('wp_enqueue_scripts', 'thost_register_front_end');
-function thost_register_front_end() {
+function thost_register_front_end(): void
+{
 	// remove style gutenberg
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
@@ -30,11 +33,6 @@ function thost_register_front_end() {
 
     // disable storefront frontend block styles
 	wp_dequeue_style('storefront-gutenberg-blocks');
-
-	/** Load css **/
-
-	// font google
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap', array(), null );
 
 	// bootstrap css
 	wp_enqueue_style( 'bootstrap', get_theme_file_uri( '/assets/libs/bootstrap/bootstrap.min.css' ), array(), '5.2.3' );

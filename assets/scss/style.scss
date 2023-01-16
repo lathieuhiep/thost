@@ -31,6 +31,24 @@ Text Domain: thost
 * -----------------------------------------------------------------------------
 */
 
+@font-face {
+  font-family: 'Be Vietnam';
+  src: url('assets/fonts/BeVietnam-Bold.woff2') format('woff2'),
+  url('assets/fonts/BeVietnam-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Be Vietnam';
+  src: url('assets/fonts/BeVietnam-Regular.woff2') format('woff2'),
+  url('assets/fonts/BeVietnam-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "variables-site/variables";
 
 /**
