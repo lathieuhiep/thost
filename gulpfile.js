@@ -1,6 +1,6 @@
 'use strict';
 
-const { src, dest, watch, series } = require('gulp');
+const { src, dest, watch } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync');
@@ -15,7 +15,7 @@ const pathRoot = './';
 // server
 function server() {
     browserSync.init({
-        proxy: "localhost/basictheme/",
+        proxy: "localhost/thost/",
         open: 'local',
         cors: true,
         ghostMode: false
@@ -25,14 +25,12 @@ function server() {
 // Task buildStyleBootstrap
 function buildStylesBootstrap() {
     return src(`${pathRoot}assets/scss/bootstrap.scss`)
-        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(minifyCss({
             compatibility: 'ie8',
             level: {1: {specialComments: 0}}
         }))
         .pipe(rename( {suffix: '.min'} ))
-        .pipe(sourcemaps.write())
         .pipe(dest(`${pathRoot}assets/libs/bootstrap/`))
         .pipe(browserSync.stream());
 }

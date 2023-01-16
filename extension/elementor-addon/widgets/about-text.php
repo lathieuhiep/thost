@@ -8,18 +8,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
+class thost_Elementor_Addon_About_Text extends Widget_Base {
 
     public function get_categories() {
         return array( 'my-theme' );
     }
 
     public function get_name() {
-        return 'basictheme-about-text';
+        return 'thost-about-text';
     }
 
     public function get_title() {
-        return esc_html__( 'About Text', 'basictheme' );
+        return esc_html__( 'About Text', 'thost' );
     }
 
     public function get_icon() {
@@ -32,7 +32,7 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Heading', 'basictheme' ),
+                'label' => esc_html__( 'Heading', 'thost' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -40,9 +40,9 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->add_control(
             'heading',
             [
-                'label'         =>  esc_html__( 'Heading', 'basictheme' ),
+                'label'         =>  esc_html__( 'Heading', 'thost' ),
                 'type'          =>  Controls_Manager::TEXT,
-                'default'       =>  esc_html__( 'Heading About Text', 'basictheme' ),
+                'default'       =>  esc_html__( 'Heading About Text', 'thost' ),
                 'label_block'   =>  true
             ]
         );
@@ -50,9 +50,9 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->add_control(
             'description',
             [
-                'label'     =>  esc_html__( 'Description', 'basictheme' ),
+                'label'     =>  esc_html__( 'Description', 'thost' ),
                 'type'      =>  Controls_Manager::WYSIWYG,
-                'default'   =>  esc_html__( 'Default description', 'basictheme' ),
+                'default'   =>  esc_html__( 'Default description', 'thost' ),
             ]
         );
 
@@ -62,7 +62,7 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->start_controls_section(
             'style_heading',
             [
-                'label' => esc_html__( 'Heading', 'basictheme' ),
+                'label' => esc_html__( 'Heading', 'thost' ),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -70,26 +70,26 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->add_control(
             'align',
             [
-                'label'     =>  esc_html__( 'Alignment Title', 'basictheme' ),
+                'label'     =>  esc_html__( 'Alignment Title', 'thost' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     'left'  =>  [
-                        'title' =>  esc_html__( 'Left', 'basictheme' ),
+                        'title' =>  esc_html__( 'Left', 'thost' ),
                         'icon'  =>  'eicon-text-align-left',
                     ],
 
                     'center' => [
-                        'title' =>  esc_html__( 'Center', 'basictheme' ),
+                        'title' =>  esc_html__( 'Center', 'thost' ),
                         'icon'  =>  'eicon-text-align-center',
                     ],
 
                     'right' => [
-                        'title' =>  esc_html__( 'Right', 'basictheme' ),
+                        'title' =>  esc_html__( 'Right', 'thost' ),
                         'icon'  =>  'eicon-text-align-right',
                     ],
 
                     'justify'=> [
-                        'title' =>  esc_html__( 'Justified', 'basictheme' ),
+                        'title' =>  esc_html__( 'Justified', 'thost' ),
                         'icon'  =>  'eicon-text-align-justify',
                     ],
                 ],
@@ -102,7 +102,7 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->add_control(
             'heading_color',
             [
-                'label'     =>  esc_html__( 'Color', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color', 'thost' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'selectors' =>  [
                     '{{WRAPPER}} .element-about-text__title' => 'color: {{VALUE}}',
@@ -114,7 +114,7 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
 	        Group_Control_Typography::get_type(),
             [
                 'name' => 'heading_typography',
-                'label' => esc_html__( 'Typography', 'basictheme' ),
+                'label' => esc_html__( 'Typography', 'thost' ),
                 'selector' => '{{WRAPPER}} .element-about-text__title',
             ]
         );
@@ -125,7 +125,7 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->start_controls_section(
             'style_description',
             [
-                'label' => esc_html__( 'Description', 'basictheme' ),
+                'label' => esc_html__( 'Description', 'thost' ),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -133,7 +133,7 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
         $this->add_control(
             'description_color',
             [
-                'label'     =>  __( 'Color', 'basictheme' ),
+                'label'     =>  __( 'Color', 'thost' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'selectors' =>  [
                     '{{WRAPPER}} .element-about-text__description' => 'color: {{VALUE}}',
@@ -145,7 +145,7 @@ class BasicTheme_Elementor_Addon_About_Text extends Widget_Base {
 	        Group_Control_Typography::get_type(),
             [
                 'name' => 'description_typography',
-                'label' => __( 'Typography', 'basictheme' ),
+                'label' => __( 'Typography', 'thost' ),
                 'selector' => '{{WRAPPER}} .element-about-text__description',
             ]
         );

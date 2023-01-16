@@ -7,18 +7,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class BasicTheme_Elementor_Addon_Contact_Form_7 extends Widget_Base {
+class thost_Elementor_Addon_Contact_Form_7 extends Widget_Base {
 
 	public function get_categories() {
 		return array( 'my-theme' );
 	}
 
 	public function get_name() {
-		return 'basictheme-contact-form-7';
+		return 'thost-contact-form-7';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Contact Form 7', 'basictheme' );
+		return esc_html__( 'Contact Form 7', 'thost' );
 	}
 
 	public function get_icon() {
@@ -31,7 +31,7 @@ class BasicTheme_Elementor_Addon_Contact_Form_7 extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Contact Form', 'basictheme' ),
+				'label' => esc_html__( 'Contact Form', 'thost' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -39,10 +39,10 @@ class BasicTheme_Elementor_Addon_Contact_Form_7 extends Widget_Base {
 		$this->add_control(
 			'contact_form_list',
 			[
-				'label' => esc_html__('Select Form', 'basictheme'),
+				'label' => esc_html__('Select Form', 'thost'),
 				'type' => Controls_Manager::SELECT,
 				'label_block' => true,
-				'options' => basictheme_get_form_cf7(),
+				'options' => thost_get_form_cf7(),
 				'default' => '0',
 			]
 		);

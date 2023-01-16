@@ -1,6 +1,6 @@
 <?php
-$show_copyright = basictheme_get_option('copyright_opt_show', '1');
-$copyright = basictheme_get_option('copyright_opt_content', 'Copyright &amp; DiepLK');
+$show_copyright = thost_get_option('copyright_opt_show', '1');
+$copyright = thost_get_option('copyright_opt_content', 'Copyright &amp; DiepLK');
 ?>
 
 <div class="site-footer__bottom">
@@ -33,7 +33,7 @@ $copyright = basictheme_get_option('copyright_opt_content', 'Copyright &amp; Die
                         <ul class="main-menu">
                             <li>
                                 <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                    <?php esc_html_e( 'ADD TO MENU','basictheme' ); ?>
+                                    <?php esc_html_e( 'ADD TO MENU','thost' ); ?>
                                 </a>
                             </li>
                         </ul>

@@ -1,6 +1,6 @@
 <?php
-$share_post = basictheme_get_option('single_opt_share_post', '1');
-$show_related = basictheme_get_option('single_opt_related_post', '1');
+$share_post = thost_get_option('single_opt_share_post', '1');
+$show_related = thost_get_option('single_opt_related_post', '1');
 ?>
 
 <div id="post-<?php the_ID() ?>" <?php post_class( 'site-post-single-item' ); ?>>
@@ -15,13 +15,13 @@ $show_related = basictheme_get_option('single_opt_related_post', '1');
             <?php the_title(); ?>
         </h2>
 
-        <?php basictheme_post_meta(); ?>
+        <?php thost_post_meta(); ?>
 
         <div class="site-post-excerpt">
             <?php
             the_content();
 
-            basictheme_link_page();
+            thost_link_page();
             ?>
         </div>
 
@@ -29,7 +29,7 @@ $show_related = basictheme_get_option('single_opt_related_post', '1');
             <?php if( get_the_category() ): ?>
                 <p class="site-post-category">
                     <?php
-                    esc_html_e('Category: ','basictheme');
+                    esc_html_e('Category: ','thost');
                     the_category( ' ' );
                     ?>
                 </p>
@@ -40,7 +40,7 @@ $show_related = basictheme_get_option('single_opt_related_post', '1');
             ?>
                 <p class="site-post-tag">
                     <?php
-                    esc_html_e( 'Tag: ','basictheme' );
+                    esc_html_e( 'Tag: ','thost' );
                     the_tags('',' ');
                     ?>
                 </p>
@@ -50,13 +50,13 @@ $show_related = basictheme_get_option('single_opt_related_post', '1');
 
     <?php
     if ( $share_post == '1' ) :
-        basictheme_post_share();
+        thost_post_share();
     endif;
     ?>
 </div>
 
 <?php
-basictheme_comment_form();
+thost_comment_form();
 
 if ( $show_related == '1' ) :
     get_template_part( 'template-parts/post/inc','related-post' );

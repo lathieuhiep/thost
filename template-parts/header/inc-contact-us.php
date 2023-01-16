@@ -1,10 +1,10 @@
 <?php
-$show_contact_us = basictheme_get_option('contact_us_opt_show', '1');
+$show_contact_us = thost_get_option('contact_us_opt_show', '1');
 
 if ( $show_contact_us == '1' ) :
-    $address = basictheme_get_option('contact_us_opt_address', '988782, Our Street, S State');
-    $mail = basictheme_get_option('contact_us_opt_email', 'info@domain.com');
-    $phone = basictheme_get_option('contact_us_opt_phone', '+1 234 567 186');
+    $address = thost_get_option('contact_us_opt_address', '988782, Our Street, S State');
+    $mail = thost_get_option('contact_us_opt_email', 'info@domain.com');
+    $phone = thost_get_option('contact_us_opt_phone', '+1 234 567 186');
 ?>
 
 <div class="contact-us">
@@ -29,7 +29,7 @@ if ( $show_contact_us == '1' ) :
 
             <div class="col-12 col-md-12 col-lg-5 d-none d-lg-block">
                 <div class="contact-us__social-network d-lg-flex justify-content-lg-end">
-                    <?php basictheme_get_social_url(); ?>
+                    <?php thost_get_social_url(); ?>
                 </div>
             </div>
         </div>

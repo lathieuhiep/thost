@@ -1,14 +1,14 @@
 /*
-Theme Name: BasicTheme
+Theme Name: THost
 Theme URI: https://uxui.vn/
 Author: DiepLK
 Author URI: https://www.facebook.com/lathieuhiep
 Version: 1.0.0
-Description: Basic Theme
+Description: Xin cảm ơn bạn đã sử dụng sản phẩm của tôi. Nếu bạn cần trợ giúp hoặc làm website có thể liên hệ với tôi để trao đổi (Zalo/Phone: 0975458209, Skype: lathieuhiep, Facebook: <a href="https://www.facebook.com/lathieuhiep">La Khắc Điệp</a>)
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, four-columns, right-sidebar,  theme-options
-Text Domain: basictheme
+Text Domain: thost
 */
 
 /**
@@ -25,12 +25,6 @@ Text Domain: basictheme
   ## Single
   ## Pagination
   ## Comment
-# Woocommerce
-  ## Archive shop
-  ## Single Shop
-  ## Other Page Shop
-  ## Sidebar Shop
-  ## Quick View Product
 # Contact Form 7
 # Footer
 # Responsive
@@ -67,11 +61,6 @@ Text Domain: basictheme
 # Blog
 -----------------------------------------------------------------------------*/
 @import "blog/blog";
-
-/**
-# Woocommerce
------------------------------------------------------------------------------*/
-@import "shop/shop";
 
 /**
 # Contact Form 7

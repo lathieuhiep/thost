@@ -2,7 +2,7 @@
 $term_ids  = wp_get_post_terms( get_the_ID(), 'category', array( 'fields' => 'ids' ) );
 
 if ( !empty( $term_ids ) ):
-	$limit = basictheme_get_option('single_opt_limit_related_post', 3);
+	$limit = thost_get_option('single_opt_limit_related_post', 3);
 
     $arg = array(
         'post_type' => 'post',
@@ -17,7 +17,7 @@ if ( !empty( $term_ids ) ):
     ?>
         <div class="site-single-post-related">
             <h3 class="title">
-                <?php esc_html_e('Related Post', 'basictheme'); ?>
+                <?php esc_html_e('Related Post', 'thost'); ?>
             </h3>
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">

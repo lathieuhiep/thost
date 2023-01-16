@@ -6,7 +6,7 @@ use Elementor\Controls_Manager;
 
 if (!defined('ABSPATH')) exit;
 
-class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
+class thost_Elementor_Addon_Post_Grid extends Widget_Base
 {
 
     public function get_categories()
@@ -16,12 +16,12 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
 
     public function get_name()
     {
-        return 'basictheme-post-grid';
+        return 'thost-post-grid';
     }
 
     public function get_title()
     {
-        return esc_html__('Posts Grid', 'basictheme');
+        return esc_html__('Posts Grid', 'thost');
     }
 
     public function get_icon()
@@ -36,7 +36,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__('Query', 'basictheme'),
+                'label' => esc_html__('Query', 'thost'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -44,9 +44,9 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'select_cat',
             [
-                'label' => esc_html__('Select Category', 'basictheme'),
+                'label' => esc_html__('Select Category', 'thost'),
                 'type' => Controls_Manager::SELECT2,
-                'options' => basictheme_check_get_cat('category'),
+                'options' => thost_check_get_cat('category'),
                 'multiple' => true,
                 'label_block' => true
             ]
@@ -55,7 +55,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'limit',
             [
-                'label' => esc_html__('Number of Posts', 'basictheme'),
+                'label' => esc_html__('Number of Posts', 'thost'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => 6,
                 'min' => 1,
@@ -67,15 +67,15 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'order_by',
             [
-                'label' => esc_html__('Order By', 'basictheme'),
+                'label' => esc_html__('Order By', 'thost'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'id',
                 'options' => [
-                    'id' => esc_html__('Post ID', 'basictheme'),
-                    'author' => esc_html__('Post Author', 'basictheme'),
-                    'title' => esc_html__('Title', 'basictheme'),
-                    'date' => esc_html__('Date', 'basictheme'),
-                    'rand' => esc_html__('Random', 'basictheme'),
+                    'id' => esc_html__('Post ID', 'thost'),
+                    'author' => esc_html__('Post Author', 'thost'),
+                    'title' => esc_html__('Title', 'thost'),
+                    'date' => esc_html__('Date', 'thost'),
+                    'rand' => esc_html__('Random', 'thost'),
                 ],
             ]
         );
@@ -83,12 +83,12 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'order',
             [
-                'label' => esc_html__('Order', 'basictheme'),
+                'label' => esc_html__('Order', 'thost'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'ASC',
                 'options' => [
-                    'ASC' => esc_html__('Ascending', 'basictheme'),
-                    'DESC' => esc_html__('Descending', 'basictheme'),
+                    'ASC' => esc_html__('Ascending', 'thost'),
+                    'DESC' => esc_html__('Descending', 'thost'),
                 ],
             ]
         );
@@ -99,7 +99,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->start_controls_section(
             'content_layout',
             [
-                'label' => esc_html__('Layout Settings', 'basictheme'),
+                'label' => esc_html__('Layout Settings', 'thost'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -107,14 +107,14 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'column_number',
             [
-                'label' => esc_html__('Column', 'basictheme'),
+                'label' => esc_html__('Column', 'thost'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 3,
                 'options' => [
-                    1 => esc_html__('1 Column', 'basictheme'),
-                    2 => esc_html__('2 Column', 'basictheme'),
-                    3 => esc_html__('3 Column', 'basictheme'),
-                    4 => esc_html__('4 Column', 'basictheme'),
+                    1 => esc_html__('1 Column', 'thost'),
+                    2 => esc_html__('2 Column', 'thost'),
+                    3 => esc_html__('3 Column', 'thost'),
+                    4 => esc_html__('4 Column', 'thost'),
                 ],
             ]
         );
@@ -122,16 +122,16 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'show_excerpt',
             [
-                'label' => esc_html__('Show excerpt', 'basictheme'),
+                'label' => esc_html__('Show excerpt', 'thost'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'show' => [
-                        'title' => esc_html__('Yes', 'basictheme'),
+                        'title' => esc_html__('Yes', 'thost'),
                         'icon' => 'eicon-check',
                     ],
 
                     'hide' => [
-                        'title' => esc_html__('No', 'basictheme'),
+                        'title' => esc_html__('No', 'thost'),
                         'icon' => 'eicon-ban',
                     ]
                 ],
@@ -142,7 +142,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'excerpt_length',
             [
-                'label' => esc_html__('Excerpt Words', 'basictheme'),
+                'label' => esc_html__('Excerpt Words', 'thost'),
                 'type' => Controls_Manager::NUMBER,
                 'default' => '10',
                 'condition' => [
@@ -157,7 +157,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->start_controls_section(
             'style_title',
             [
-                'label' => esc_html__('Title', 'basictheme'),
+                'label' => esc_html__('Title', 'thost'),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -165,7 +165,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'title_color',
             [
-                'label' => esc_html__('Color', 'basictheme'),
+                'label' => esc_html__('Color', 'thost'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -177,7 +177,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'title_color_hover',
             [
-                'label' => esc_html__('Color Hover', 'basictheme'),
+                'label' => esc_html__('Color Hover', 'thost'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -197,23 +197,23 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'title_alignment',
             [
-                'label' => esc_html__('Title Alignment', 'basictheme'),
+                'label' => esc_html__('Title Alignment', 'thost'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'basictheme'),
+                        'title' => esc_html__('Left', 'thost'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'basictheme'),
+                        'title' => esc_html__('Center', 'thost'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'basictheme'),
+                        'title' => esc_html__('Right', 'thost'),
                         'icon' => 'eicon-text-align-right',
                     ],
                     'justify' => [
-                        'title' => esc_html__('Justified', 'basictheme'),
+                        'title' => esc_html__('Justified', 'thost'),
                         'icon' => 'eicon-text-align-justify',
                     ],
                 ],
@@ -230,7 +230,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->start_controls_section(
             'style_excerpt',
             [
-                'label' => esc_html__('Excerpt', 'basictheme'),
+                'label' => esc_html__('Excerpt', 'thost'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_excerpt' => 'show',
@@ -241,7 +241,7 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'excerpt_color',
             [
-                'label' => esc_html__('Color', 'basictheme'),
+                'label' => esc_html__('Color', 'thost'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
                 'selectors' => [
@@ -261,26 +261,26 @@ class BasicTheme_Elementor_Addon_Post_Grid extends Widget_Base
         $this->add_control(
             'excerpt_alignment',
             [
-                'label' => esc_html__('Excerpt Alignment', 'basictheme'),
+                'label' => esc_html__('Excerpt Alignment', 'thost'),
                 'type' => Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'basictheme'),
+                        'title' => esc_html__('Left', 'thost'),
                         'icon' => 'eicon-text-align-left',
                     ],
 
                     'center' => [
-                        'title' => esc_html__('Center', 'basictheme'),
+                        'title' => esc_html__('Center', 'thost'),
                         'icon' => 'eicon-text-align-center',
                     ],
 
                     'right' => [
-                        'title' => esc_html__('Right', 'basictheme'),
+                        'title' => esc_html__('Right', 'thost'),
                         'icon' => 'eicon-text-align-right',
                     ],
 
                     'justify' => [
-                        'title' => esc_html__('Justified', 'basictheme'),
+                        'title' => esc_html__('Justified', 'thost'),
                         'icon' => 'eicon-text-align-justify',
                     ],
                 ],

@@ -1,7 +1,7 @@
 <?php
-$sticky_menu = basictheme_get_option( 'menu_option_sticky', '1' );
-$logo = basictheme_get_option( 'general_opt_logo' );
-$cart = basictheme_get_option( 'menu_option_cart', '1' );
+$sticky_menu = thost_get_option( 'menu_option_sticky', '1' );
+$logo = thost_get_option( 'general_opt_logo' );
+$cart = thost_get_option( 'menu_option_cart', '1' );
 ?>
 
 <nav id="site-navigation" class="main-navigation<?php echo esc_attr( $sticky_menu == '1' ? ' active-sticky-nav' : '' ); ?>">
@@ -39,22 +39,12 @@ $cart = basictheme_get_option( 'menu_option_cart', '1' );
                         <ul class="main-menu">
                             <li>
                                 <a href="<?php echo get_admin_url().'/nav-menus.php'; ?>">
-                                    <?php esc_html_e( 'ADD TO MENU','basictheme' ); ?>
+                                    <?php esc_html_e( 'ADD TO MENU','thost' ); ?>
                                 </a>
                             </li>
                         </ul>
                     <?php endif; ?>
                 </div>
-
-                <?php if ( class_exists('Woocommerce') && $cart == '1' && !is_cart() && !is_checkout() ) : ?>
-                    <div class="shop-cart-view d-flex align-items-center">
-                        <?php
-                        do_action( 'basictheme_woo_shopping_cart' );
-
-                        the_widget( 'WC_Widget_Cart', '' );
-                        ?>
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
     </div>

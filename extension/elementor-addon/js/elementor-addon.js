@@ -8,16 +8,16 @@
 
     $(window).on('elementor/frontend/init', function () {
         /* Element slider */
-        elementorFrontend.hooks.addAction('frontend/element_ready/basictheme-slides.default', ElementCarouselSlider);
+        elementorFrontend.hooks.addAction('frontend/element_ready/thost-slides.default', ElementCarouselSlider);
 
         /* Element post carousel */
-        elementorFrontend.hooks.addAction('frontend/element_ready/basictheme-post-carousel.default', ElementCarouselSlider);
+        elementorFrontend.hooks.addAction('frontend/element_ready/thost-post-carousel.default', ElementCarouselSlider);
 
         /* Element testimonial slider */
-        elementorFrontend.hooks.addAction('frontend/element_ready/basictheme-testimonial-slider.default', ElementCarouselSlider);
+        elementorFrontend.hooks.addAction('frontend/element_ready/thost-testimonial-slider.default', ElementCarouselSlider);
 
         /* Element carousel images */
-        elementorFrontend.hooks.addAction('frontend/element_ready/basictheme-carousel-images.default', ElementCarouselSlider);
+        elementorFrontend.hooks.addAction('frontend/element_ready/thost-carousel-images.default', ElementCarouselSlider);
     });
 
 })(jQuery);

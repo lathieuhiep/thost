@@ -6,18 +6,18 @@ use Elementor\Controls_Manager;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
+class thost_Elementor_Addon_Post_Carousel extends Widget_Base {
 
     public function get_categories() {
         return array( 'my-theme' );
     }
 
     public function get_name() {
-        return 'basictheme-post-carousel';
+        return 'thost-post-carousel';
     }
 
     public function get_title() {
-        return esc_html__( 'Posts Carousel', 'basictheme' );
+        return esc_html__( 'Posts Carousel', 'thost' );
     }
 
     public function get_icon() {
@@ -30,7 +30,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Query', 'basictheme' ),
+                'label' => esc_html__( 'Query', 'thost' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -38,9 +38,9 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'select_cat',
             [
-                'label'         =>  esc_html__( 'Select Category', 'basictheme' ),
+                'label'         =>  esc_html__( 'Select Category', 'thost' ),
                 'type'          =>  Controls_Manager::SELECT2,
-                'options'       =>  basictheme_check_get_cat( 'category' ),
+                'options'       =>  thost_check_get_cat( 'category' ),
                 'multiple'      =>  true,
                 'label_block'   =>  true
             ]
@@ -49,7 +49,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'limit',
             [
-                'label'     =>  esc_html__( 'Number of Posts', 'basictheme' ),
+                'label'     =>  esc_html__( 'Number of Posts', 'thost' ),
                 'type'      =>  Controls_Manager::NUMBER,
                 'default'   =>  6,
                 'min'       =>  1,
@@ -61,14 +61,14 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'order_by',
             [
-                'label'     =>  esc_html__( 'Order By', 'basictheme' ),
+                'label'     =>  esc_html__( 'Order By', 'thost' ),
                 'type'      =>  Controls_Manager::SELECT,
                 'default'   =>  'id',
                 'options'   =>  [
-                    'id'    =>  esc_html__( 'ID', 'basictheme' ),
-                    'title' =>  esc_html__( 'Title', 'basictheme' ),
-                    'date'  =>  esc_html__( 'Date', 'basictheme' ),
-                    'rand'  =>  esc_html__( 'Random', 'basictheme' ),
+                    'id'    =>  esc_html__( 'ID', 'thost' ),
+                    'title' =>  esc_html__( 'Title', 'thost' ),
+                    'date'  =>  esc_html__( 'Date', 'thost' ),
+                    'rand'  =>  esc_html__( 'Random', 'thost' ),
                 ],
             ]
         );
@@ -76,12 +76,12 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'order',
             [
-                'label'     =>  esc_html__( 'Order', 'basictheme' ),
+                'label'     =>  esc_html__( 'Order', 'thost' ),
                 'type'      =>  Controls_Manager::SELECT,
                 'default'   =>  'DESC',
                 'options'   =>  [
-                    'ASC'   =>  esc_html__( 'Ascending', 'basictheme' ),
-                    'DESC'  =>  esc_html__( 'Descending', 'basictheme' ),
+                    'ASC'   =>  esc_html__( 'Ascending', 'thost' ),
+                    'DESC'  =>  esc_html__( 'Descending', 'thost' ),
                 ],
             ]
         );
@@ -89,16 +89,16 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'show_excerpt',
             [
-                'label'     =>  esc_html__( 'Show excerpt', 'basictheme' ),
+                'label'     =>  esc_html__( 'Show excerpt', 'thost' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     'show' => [
-                        'title' =>  esc_html__( 'Yes', 'basictheme' ),
+                        'title' =>  esc_html__( 'Yes', 'thost' ),
                         'icon'  =>  'eicon-check',
                     ],
 
                     'hide' => [
-                        'title' =>  esc_html__( 'No', 'basictheme' ),
+                        'title' =>  esc_html__( 'No', 'thost' ),
                         'icon'  =>  'eicon-ban',
                     ],
                 ],
@@ -109,7 +109,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'excerpt_length',
             [
-                'label'     =>  esc_html__( 'Excerpt Words', 'basictheme' ),
+                'label'     =>  esc_html__( 'Excerpt Words', 'thost' ),
                 'type'      =>  Controls_Manager::NUMBER,
                 'default'   =>  '10',
                 'condition' =>  [
@@ -124,7 +124,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'additional_options_section',
             [
-                'label' => esc_html__( 'Additional Options', 'basictheme' ),
+                'label' => esc_html__( 'Additional Options', 'thost' ),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -133,9 +133,9 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 		    'loop',
 		    [
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label'         =>  esc_html__('Loop Slider?', 'basictheme'),
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
+			    'label'         =>  esc_html__('Loop Slider?', 'thost'),
+			    'label_off'     =>  esc_html__('No', 'thost'),
+			    'label_on'      =>  esc_html__('Yes', 'thost'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'yes',
 		    ]
@@ -144,10 +144,10 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'autoplay',
 		    [
-			    'label'         =>  esc_html__('Autoplay?', 'basictheme'),
+			    'label'         =>  esc_html__('Autoplay?', 'thost'),
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
+			    'label_off'     =>  esc_html__('No', 'thost'),
+			    'label_on'      =>  esc_html__('Yes', 'thost'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'no',
 		    ]
@@ -156,10 +156,10 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'nav',
 		    [
-			    'label'         =>  esc_html__('Nav Slider', 'basictheme'),
+			    'label'         =>  esc_html__('Nav Slider', 'thost'),
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
+			    'label_on'      =>  esc_html__('Yes', 'thost'),
+			    'label_off'     =>  esc_html__('No', 'thost'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'yes',
 		    ]
@@ -168,10 +168,10 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'dots',
 		    [
-			    'label'         =>  esc_html__('Dots Slider', 'basictheme'),
+			    'label'         =>  esc_html__('Dots Slider', 'thost'),
 			    'type'          =>  Controls_Manager::SWITCHER,
-			    'label_on'      =>  esc_html__('Yes', 'basictheme'),
-			    'label_off'     =>  esc_html__('No', 'basictheme'),
+			    'label_on'      =>  esc_html__('Yes', 'thost'),
+			    'label_off'     =>  esc_html__('No', 'thost'),
 			    'return_value'  =>  'yes',
 			    'default'       =>  'yes',
 		    ]
@@ -180,7 +180,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'margin_item',
 		    [
-			    'label'     =>  esc_html__( 'Space Between Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Space Between Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  30,
 			    'min'       =>  0,
@@ -192,7 +192,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_1200',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 1200px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 1200px', 'thost' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -201,7 +201,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'item',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  3,
 			    'min'       =>  1,
@@ -213,7 +213,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_992',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 992px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 992px', 'thost' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -222,7 +222,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_992',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  2,
 			    'min'       =>  1,
@@ -234,7 +234,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_768',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 768px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 768px', 'thost' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -243,7 +243,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_768',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  2,
 			    'min'       =>  1,
@@ -255,7 +255,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'min_width_568',
 		    [
-			    'label'     =>  esc_html__( 'Min Width 568px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Min Width 568px', 'thost' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -264,7 +264,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_568',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  2,
 			    'min'       =>  1,
@@ -276,7 +276,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'margin_item_568',
 		    [
-			    'label'     =>  esc_html__( 'Space Between Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Space Between Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  15,
 			    'min'       =>  0,
@@ -288,7 +288,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'max_width_567',
 		    [
-			    'label'     =>  esc_html__( 'Max Width 567px', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Max Width 567px', 'thost' ),
 			    'type'      =>  Controls_Manager::HEADING,
 			    'separator' =>  'before',
 		    ]
@@ -297,7 +297,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'item_567',
 		    [
-			    'label'     =>  esc_html__( 'Number of Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Number of Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  1,
 			    'min'       =>  1,
@@ -309,7 +309,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
 	    $this->add_control(
 		    'margin_item_567',
 		    [
-			    'label'     =>  esc_html__( 'Space Between Item', 'basictheme' ),
+			    'label'     =>  esc_html__( 'Space Between Item', 'thost' ),
 			    'type'      =>  Controls_Manager::NUMBER,
 			    'default'   =>  0,
 			    'min'       =>  0,
@@ -324,7 +324,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'style_title',
             [
-                'label' => esc_html__( 'Title', 'basictheme' ),
+                'label' => esc_html__( 'Title', 'thost' ),
                 'tab' => Controls_Manager::TAB_STYLE
             ]
         );
@@ -332,7 +332,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'title_color',
             [
-                'label'     =>  esc_html__( 'Color', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color', 'thost' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'default'   =>  '',
                 'selectors' =>  [
@@ -344,7 +344,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'title_color_hover',
             [
-                'label'     =>  esc_html__( 'Color Hover', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color Hover', 'thost' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'default'   =>  '',
                 'selectors' =>  [
@@ -364,26 +364,26 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'title_alignment',
             [
-                'label'     =>  esc_html__( 'Title Alignment', 'basictheme' ),
+                'label'     =>  esc_html__( 'Title Alignment', 'thost' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     'left'  =>  [
-                        'title' =>  esc_html__( 'Left', 'basictheme' ),
+                        'title' =>  esc_html__( 'Left', 'thost' ),
                         'icon'  =>  'eicon-text-align-left',
                     ],
 
                     'center' => [
-                        'title' =>  esc_html__( 'Center', 'basictheme' ),
+                        'title' =>  esc_html__( 'Center', 'thost' ),
                         'icon'  =>  'eicon-text-align-center',
                     ],
 
                     'right' => [
-                        'title' =>  esc_html__( 'Right', 'basictheme' ),
+                        'title' =>  esc_html__( 'Right', 'thost' ),
                         'icon'  =>  'eicon-text-align-right',
                     ],
 
                     'justify'=> [
-                        'title' =>  esc_html__( 'Justified', 'basictheme' ),
+                        'title' =>  esc_html__( 'Justified', 'thost' ),
                         'icon'  =>  'eicon-text-align-justify',
                     ],
                 ],
@@ -400,7 +400,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->start_controls_section(
             'style_excerpt',
             [
-                'label' => esc_html__( 'Excerpt', 'basictheme' ),
+                'label' => esc_html__( 'Excerpt', 'thost' ),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' =>  [
                     'show_excerpt' => 'show',
@@ -411,7 +411,7 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'excerpt_color',
             [
-                'label'     =>  esc_html__( 'Color', 'basictheme' ),
+                'label'     =>  esc_html__( 'Color', 'thost' ),
                 'type'      =>  Controls_Manager::COLOR,
                 'default'   =>  '',
                 'selectors' =>  [
@@ -431,26 +431,26 @@ class BasicTheme_Elementor_Addon_Post_Carousel extends Widget_Base {
         $this->add_control(
             'excerpt_alignment',
             [
-                'label'     =>  esc_html__( 'Excerpt Alignment', 'basictheme' ),
+                'label'     =>  esc_html__( 'Excerpt Alignment', 'thost' ),
                 'type'      =>  Controls_Manager::CHOOSE,
                 'options'   =>  [
                     'left'  =>  [
-                        'title' =>  esc_html__( 'Left', 'basictheme' ),
+                        'title' =>  esc_html__( 'Left', 'thost' ),
                         'icon'  =>  'eicon-text-align-left',
                     ],
 
                     'center' => [
-                        'title' =>  esc_html__( 'Center', 'basictheme' ),
+                        'title' =>  esc_html__( 'Center', 'thost' ),
                         'icon'  =>  'eicon-text-align-center',
                     ],
 
                     'right' => [
-                        'title' =>  esc_html__( 'Right', 'basictheme' ),
+                        'title' =>  esc_html__( 'Right', 'thost' ),
                         'icon'  =>  'eicon-text-align-right',
                     ],
 
                     'justify'=> [
-                        'title' =>  esc_html__( 'Justified', 'basictheme' ),
+                        'title' =>  esc_html__( 'Justified', 'thost' ),
                         'icon'  =>  'eicon-text-align-justify',
                     ],
                 ],

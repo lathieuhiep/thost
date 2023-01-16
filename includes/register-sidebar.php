@@ -3,38 +3,33 @@
 add_filter('use_widgets_block_editor', '__return_false');
 
 // Register Sidebar
-add_action('widgets_init', 'basictheme_widgets_init');
-function basictheme_widgets_init()
+add_action('widgets_init', 'thost_widgets_init');
+function thost_widgets_init()
 {
     $list_widget = array(
-        'basictheme-sidebar-main' => array(
-            'name' => esc_html__('Sidebar Main', 'basictheme'),
-            'description' => esc_html__('Display sidebar right or left on all page.', 'basictheme')
+        'thost-sidebar-main' => array(
+            'name' => esc_html__('Sidebar Main', 'thost'),
+            'description' => esc_html__('Display sidebar right or left on all page.', 'thost')
         ),
 
-        'basictheme-sidebar-wc' => array(
-            'name' => esc_html__('Sidebar Woocommerce', 'basictheme'),
-            'description' => esc_html__('Display sidebar on page shop.', 'basictheme')
+        'thost-sidebar-footer-column-1' => array(
+            'name' => esc_html__('Sidebar Footer Column 1', 'thost'),
+            'description' => esc_html__('Display footer column 1 on all page.', 'thost')
         ),
 
-        'basictheme-sidebar-footer-column-1' => array(
-            'name' => esc_html__('Sidebar Footer Column 1', 'basictheme'),
-            'description' => esc_html__('Display footer column 1 on all page.', 'basictheme')
+        'thost-sidebar-footer-column-2' => array(
+            'name' => esc_html__('Sidebar Footer Column 2', 'thost'),
+            'description' => esc_html__('Display footer column 2 on all page.', 'thost')
         ),
 
-        'basictheme-sidebar-footer-column-2' => array(
-            'name' => esc_html__('Sidebar Footer Column 2', 'basictheme'),
-            'description' => esc_html__('Display footer column 2 on all page.', 'basictheme')
+        'thost-sidebar-footer-column-3' => array(
+            'name' => esc_html__('Sidebar Footer Column 3', 'thost'),
+            'description' => esc_html__('Display footer column 3 on all page.', 'thost')
         ),
 
-        'basictheme-sidebar-footer-column-3' => array(
-            'name' => esc_html__('Sidebar Footer Column 3', 'basictheme'),
-            'description' => esc_html__('Display footer column 3 on all page.', 'basictheme')
-        ),
-
-        'basictheme-sidebar-footer-column-4' => array(
-            'name' => esc_html__('Sidebar Footer Column 4', 'basictheme'),
-            'description' => esc_html__('Display footer column 4 on all page.', 'basictheme')
+        'thost-sidebar-footer-column-4' => array(
+            'name' => esc_html__('Sidebar Footer Column 4', 'thost'),
+            'description' => esc_html__('Display footer column 4 on all page.', 'thost')
         )
     );
 

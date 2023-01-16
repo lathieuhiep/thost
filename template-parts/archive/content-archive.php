@@ -1,8 +1,8 @@
 <?php
-$sidebar = basictheme_get_option('blog_cat_opt_sidebar', 'right');
-$per_row = basictheme_get_option('blog_cat_opt_per_row', '2');
+$sidebar = thost_get_option('blog_cat_opt_sidebar', 'right');
+$per_row = thost_get_option('blog_cat_opt_per_row', '2');
 
-$class_col_content = basictheme_col_use_sidebar($sidebar, 'basictheme-sidebar-main');
+$class_col_content = thost_col_use_sidebar($sidebar, 'thost-sidebar-main');
 ?>
 
 <div class="site-container site-blog">
@@ -33,7 +33,7 @@ $class_col_content = basictheme_col_use_sidebar($sidebar, 'basictheme-sidebar-ma
                                         <?php
                                         get_template_part('template-parts/post/content', 'image');
 
-                                        basictheme_post_meta();
+                                        thost_post_meta();
                                         ?>
 
                                         <div class="site-post-excerpt">
@@ -48,10 +48,10 @@ $class_col_content = basictheme_col_use_sidebar($sidebar, 'basictheme-sidebar-ma
                                             </p>
 
                                             <a href="<?php the_permalink(); ?>" class="text-read-more">
-                                                <?php esc_html_e('Read more', 'basictheme'); ?>
+                                                <?php esc_html_e('Read more', 'thost'); ?>
                                             </a>
 
-                                            <?php basictheme_link_page(); ?>
+                                            <?php thost_link_page(); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@ $class_col_content = basictheme_col_use_sidebar($sidebar, 'basictheme-sidebar-ma
                         </div>
 
                     <?php
-                        basictheme_pagination();
+                        thost_pagination();
                     else:
                         if ( is_search() ) :
                             get_template_part('template-parts/search/content', 'no-data');

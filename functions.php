@@ -8,8 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 require get_parent_theme_file_path( '/includes/theme-helper.php' );
 
 // Setup Theme
-add_action( 'after_setup_theme', 'basictheme_setup' );
-function basictheme_setup(): void {
+add_action( 'after_setup_theme', 'thost_setup' );
+function thost_setup(): void {
 	// Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 
@@ -24,7 +24,7 @@ function basictheme_setup(): void {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'basictheme', get_parent_theme_file_path( '/languages' ) );
+	load_theme_textdomain( 'thost', get_parent_theme_file_path( '/languages' ) );
 
 	/**
 	 * Set up theme defaults and registers support for various WordPress features.
@@ -47,8 +47,8 @@ function basictheme_setup(): void {
 	// This theme uses wp_nav_menu() in two locations.
     register_nav_menus(
         array(
-            'primary'   => esc_html__('Primary Menu', 'basictheme'),
-            'footer-menu' => esc_html__('Footer Menu', 'basictheme'),
+            'primary'   => esc_html__('Primary Menu', 'thost'),
+            'footer-menu' => esc_html__('Footer Menu', 'thost'),
         )
     );
 
@@ -83,11 +83,3 @@ require get_parent_theme_file_path( '/includes/register-sidebar.php' );
 
 // Require Theme Scripts
 require get_parent_theme_file_path( '/includes/theme-scripts.php' );
-
-// Require Woocommerce
-if ( class_exists( 'Woocommerce' ) ) :
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-scripts.php' );
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-quick-view.php' );
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-template-hooks.php' );
-	require get_parent_theme_file_path( '/extension/woocommerce/woo-template-functions.php' );
-endif;

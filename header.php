@@ -21,7 +21,7 @@ if ( !is_404() ) {
 
 <!--Start back top-->
 <?php
-$opt_back_to_top = basictheme_get_option( 'general_opt_back_to_top', '1' );
+$opt_back_to_top = thost_get_option( 'general_opt_back_to_top', '1' );
 
 if ( $opt_back_to_top == '1' ) :
 ?>

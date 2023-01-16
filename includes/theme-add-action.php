@@ -1,8 +1,8 @@
 <?php
 // setting favicon
-add_action('wp_head', 'basictheme_favicon', 1);
-function basictheme_favicon(): void {
-    $opt_favicon = basictheme_get_option( 'general_opt_favicon' );
+add_action('wp_head', 'thost_favicon', 1);
+function thost_favicon(): void {
+    $opt_favicon = thost_get_option( 'general_opt_favicon' );
 
     if ( empty( $opt_favicon['url'] ) ) :
         $favicon_url = get_theme_file_uri('/assets/images/favicon.png' );
@@ -14,8 +14,8 @@ function basictheme_favicon(): void {
 }
 
 // add property
-add_action( 'wp_head', 'basictheme_opengraph', 5 );
-function basictheme_opengraph(): void {
+add_action( 'wp_head', 'thost_opengraph', 5 );
+function thost_opengraph(): void {
 	global $post;
 
 	if ( is_single() ) :
@@ -45,18 +45,18 @@ function basictheme_opengraph(): void {
 }
 
 // Sanitize Pagination
-add_action( 'navigation_markup_template', 'basictheme_sanitize_pagination' );
-function basictheme_sanitize_pagination( $basictheme_content ): string {
+add_action( 'navigation_markup_template', 'thost_sanitize_pagination' );
+function thost_sanitize_pagination( $thost_content ): string {
 	// Remove role attribute
-	$basictheme_content = str_replace( 'role="navigation"', '', $basictheme_content );
+	$thost_content = str_replace( 'role="navigation"', '', $thost_content );
 
 	// Remove h2 tag
-	return preg_replace( '#<h2.*?>(.*?)<\/h2>#si', '', $basictheme_content );
+	return preg_replace( '#<h2.*?>(.*?)<\/h2>#si', '', $thost_content );
 }
 
 // Walker for the main menu
-add_filter( 'walker_nav_menu_start_el', 'basictheme_add_arrow',10,4);
-function basictheme_add_arrow( $output, $item, $depth, $args ){
+add_filter( 'walker_nav_menu_start_el', 'thost_add_arrow',10,4);
+function thost_add_arrow( $output, $item, $depth, $args ){
 	if('primary' == $args->theme_location && $depth >= 0 ){
 		if (in_array("menu-item-has-children", $item->classes)) {
 			$output .='<span class="sub-menu-toggle"></span>';
@@ -67,8 +67,8 @@ function basictheme_add_arrow( $output, $item, $depth, $args ){
 }
 
 // Custom Search Post
-add_action( 'pre_get_posts', 'basictheme_include_custom_post_types_in_search_results' );
-function basictheme_include_custom_post_types_in_search_results( $query ): void {
+add_action( 'pre_get_posts', 'thost_include_custom_post_types_in_search_results' );
+function thost_include_custom_post_types_in_search_results( $query ): void {
 	if ( $query->is_main_query() && $query->is_search() && ! is_admin() ) {
 		$query->set( 'post_type', array( 'post' ) );
 	}
