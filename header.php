@@ -14,7 +14,7 @@
 get_template_part('template-parts/inc','loading');
 
 if ( !is_404() ) {
-	get_template_part('template-parts/header/inc','header');
+	get_template_part('components/header/inc','header');
 }
 ?>
 <!--End Loading Template-->

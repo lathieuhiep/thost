@@ -82,25 +82,6 @@ if ( class_exists( 'CSF' ) ) {
 	) );
 
 	//
-	// Create a section menu
-	CSF::createSection( $thost_prefix, array(
-		'title'  => esc_html__( 'Menu', 'thost' ),
-		'icon'   => 'fas fa-bars',
-		'fields' => array(
-			// Sticky menu
-			array(
-				'id'         => 'menu_option_sticky',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Sticky menu', 'thost' ),
-				'text_on'    => esc_html__( 'Yes', 'thost' ),
-				'text_off'   => esc_html__( 'No', 'thost' ),
-				'text_width' => 80,
-				'default'    => true
-			),
-		)
-	) );
-
-	//
 	// -> Create a section blog
 	CSF::createSection( $thost_prefix, array(
 		'id'    => 'blog_opt_section',
