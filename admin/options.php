@@ -43,7 +43,7 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'      => 'general_opt_logo',
 				'type'    => 'media',
-				'title'   => esc_html__( 'Upload Image Logo', 'thost' ),
+				'title'   => esc_html__( 'Upload Logo', 'thost' ),
 				'library' => 'image',
 				'url'     => false
 			),
@@ -96,60 +96,6 @@ if ( class_exists( 'CSF' ) ) {
 				'text_off'   => esc_html__( 'No', 'thost' ),
 				'text_width' => 80,
 				'default'    => true
-			),
-
-			// Show cart
-			array(
-				'id'         => 'menu_option_cart',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Cart', 'thost' ),
-				'text_on'    => esc_html__( 'Yes', 'thost' ),
-				'text_off'   => esc_html__( 'No', 'thost' ),
-				'text_width' => 80,
-				'default'    => true
-			),
-		)
-	) );
-
-	//
-	// Create a section contact us
-	CSF::createSection( $thost_prefix, array(
-		'title'  => esc_html__( 'Contact us', 'thost' ),
-		'icon'   => 'far fa-address-card',
-		'fields' => array(
-			// Show contact us
-			array(
-				'id'         => 'contact_us_opt_show',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Show Contact Us', 'thost' ),
-				'text_on'    => esc_html__( 'Yes', 'thost' ),
-				'text_off'   => esc_html__( 'No', 'thost' ),
-				'text_width' => 80,
-				'default'    => true
-			),
-
-			// Address
-			array(
-				'id'      => 'contact_us_opt_address',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Address', 'thost' ),
-				'default' => esc_html__( '988782, Our Street, S State', 'thost' )
-			),
-
-			// Email
-			array(
-				'id'      => 'contact_us_opt_email',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Email', 'thost' ),
-				'default' => 'info@domain.com'
-			),
-
-			// Phone
-			array(
-				'id'      => 'contact_us_opt_phone',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Phone', 'thost' ),
-				'default' => '+1 234 567 186'
 			),
 		)
 	) );
@@ -213,16 +159,6 @@ if ( class_exists( 'CSF' ) ) {
 				'default' => 'right'
 			),
 
-			array(
-				'id'         => 'single_opt_share_post',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Share post', 'thost' ),
-				'text_on'    => esc_html__( 'Yes', 'thost' ),
-				'text_off'   => esc_html__( 'No', 'thost' ),
-				'default'    => true,
-				'text_width' => 80
-			),
-
 			// Show related post
 			array(
 				'id'         => 'single_opt_related_post',
@@ -269,6 +205,12 @@ if ( class_exists( 'CSF' ) ) {
 						'default' => '#'
 					),
 
+					array(
+						'id'    => 'color',
+						'type'  => 'color',
+						'title' => esc_html__( 'Color', 'thost' ),
+					),
+
 				),
 				'default' => array(
 					array(
@@ -286,48 +228,6 @@ if ( class_exists( 'CSF' ) ) {
 	) );
 
 	//
-	//  Create a section shop
-	CSF::createSection( $thost_prefix, array(
-		'title'  => esc_html__( 'Shop', 'thost' ),
-		'icon'   => 'fas fa-shopping-cart',
-		'fields' => array(
-			// Sidebar
-			array(
-				'id'      => 'shop_opt_sidebar',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Sidebar position', 'thost' ),
-				'options' => array(
-					'hide'  => esc_html__( 'Hide', 'thost' ),
-					'left'  => esc_html__( 'Left', 'thost' ),
-					'right' => esc_html__( 'Right', 'thost' ),
-				),
-				'default' => 'left'
-			),
-
-			// Limit
-			array(
-				'id'      => 'shop_opt_limit',
-				'type'    => 'number',
-				'title'   => esc_html__( 'Limit Product', 'thost' ),
-				'default' => 12,
-			),
-
-			// Per Row
-			array(
-				'id'      => 'shop_opt_per_row',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Products Per Row', 'thost' ),
-				'options' => array(
-					'3' => esc_html__( '3 Column', 'thost' ),
-					'4' => esc_html__( '4 Column', 'thost' ),
-					'5' => esc_html__( '5 Column', 'thost' ),
-				),
-				'default' => '4'
-			),
-		)
-	) );
-
-	//
 	// -> Create a section footer
 	CSF::createSection( $thost_prefix, array(
 		'id'    => 'footer_opt_section',
@@ -335,14 +235,30 @@ if ( class_exists( 'CSF' ) ) {
 		'title' => esc_html__( 'Footer', 'thost' ),
 	) );
 
-	// footer columns
+	// footer logo
 	CSF::createSection( $thost_prefix, array(
 		'parent' => 'footer_opt_section',
-		'title'  => esc_html__( 'Columns Sidebar', 'thost' ),
+		'title'  => esc_html__( 'Logo', 'thost' ),
+		'fields' => array(
+			// logo
+			array(
+				'id'      => 'footer_opt_logo',
+				'type'    => 'media',
+				'title'   => esc_html__( 'Upload Logo', 'thost' ),
+				'library' => 'image',
+				'url'     => false
+			),
+		)
+	) );
+
+	// Sidebar footer mid
+	CSF::createSection( $thost_prefix, array(
+		'parent' => 'footer_opt_section',
+		'title'  => esc_html__( 'Sidebar Mid', 'thost' ),
 		'fields' => array(
 			// select columns
 			array(
-				'id'      => 'footer_opt_columns',
+				'id'      => 'footer_opt_sidebar_mid',
 				'type'    => 'select',
 				'title'   => esc_html__( 'Number of footer columns', 'thost' ),
 				'options' => array(
@@ -357,73 +273,112 @@ if ( class_exists( 'CSF' ) ) {
 
 			// column width 1
 			array(
-				'id'         => 'footer_opt_column_width_1',
+				'id'         => 'footer_opt_sidebar_mid_1',
 				'type'       => 'slider',
 				'title'      => esc_html__( 'Column width 1', 'thost' ),
 				'default'    => 3,
 				'min'        => 1,
 				'max'        => 12,
-				'dependency' => array( 'footer_opt_columns', '!=', '0' )
+				'dependency' => array( 'footer_opt_sidebar_mid', '!=', '0' )
 			),
 
 			// column width 2
 			array(
-				'id'         => 'footer_opt_column_width_2',
+				'id'         => 'footer_opt_sidebar_mid_2',
 				'type'       => 'slider',
 				'title'      => esc_html__( 'Column width 2', 'thost' ),
 				'default'    => 3,
 				'min'        => 1,
 				'max'        => 12,
-				'dependency' => array( 'footer_opt_columns', 'not-any', '0,1' )
+				'dependency' => array( 'footer_opt_sidebar_mid', 'not-any', '0,1' )
 			),
 
 			// column width 3
 			array(
-				'id'         => 'footer_opt_column_width_3',
+				'id'         => 'footer_opt_sidebar_mid_3',
 				'type'       => 'slider',
 				'title'      => esc_html__( 'Column width 3', 'thost' ),
 				'default'    => 3,
 				'min'        => 1,
 				'max'        => 12,
-				'dependency' => array( 'footer_opt_columns', 'not-any', '0,1,2' )
+				'dependency' => array( 'footer_opt_sidebar_mid', 'not-any', '0,1,2' )
 			),
 
 			// column width 4
 			array(
-				'id'         => 'footer_opt_column_width_4',
+				'id'         => 'footer_opt_sidebar_mid_4',
 				'type'       => 'slider',
 				'title'      => esc_html__( 'Column width 4', 'thost' ),
 				'default'    => 3,
 				'min'        => 1,
 				'max'        => 12,
-				'dependency' => array( 'footer_opt_columns', 'not-any', '0,1,2,3' )
+				'dependency' => array( 'footer_opt_sidebar_mid', 'not-any', '0,1,2,3' )
 			),
 		)
 	) );
 
-	// Copyright
+	// Sidebar footer bottom
 	CSF::createSection( $thost_prefix, array(
 		'parent' => 'footer_opt_section',
-		'title'  => esc_html__( 'Copyright', 'thost' ),
+		'title'  => esc_html__( 'Sidebar Bottom', 'thost' ),
 		'fields' => array(
-			// show
+			// select columns
 			array(
-				'id'         => 'copyright_opt_show',
-				'type'       => 'switcher',
-				'title'      => esc_html__( 'Show copyright', 'thost' ),
-				'text_on'    => esc_html__( 'Yes', 'thost' ),
-				'text_off'   => esc_html__( 'No', 'thost' ),
-				'text_width' => 80,
-				'default'    => true
+				'id'      => 'footer_opt_sidebar_bottom',
+				'type'    => 'select',
+				'title'   => esc_html__( 'Number of footer columns', 'thost' ),
+				'options' => array(
+					'0' => esc_html__( 'Hide', 'thost' ),
+					'1' => esc_html__( '1', 'thost' ),
+					'2' => esc_html__( '2', 'thost' ),
+					'3' => esc_html__( '3', 'thost' ),
+					'4' => esc_html__( '4', 'thost' ),
+				),
+				'default' => '4'
 			),
 
-			// content
+			// column width 1
 			array(
-				'id'      => 'copyright_opt_content',
-				'type'    => 'wp_editor',
-				'title'   => esc_html__( 'Content', 'thost' ),
-				'media_buttons' => false,
-				'default' => esc_html__( 'Copyright &amp; DiepLK', 'thost' )
+				'id'         => 'footer_opt_sidebar_bottom_1',
+				'type'       => 'slider',
+				'title'      => esc_html__( 'Column width 1', 'thost' ),
+				'default'    => 3,
+				'min'        => 1,
+				'max'        => 12,
+				'dependency' => array( 'footer_opt_sidebar_bottom', '!=', '0' )
+			),
+
+			// column width 2
+			array(
+				'id'         => 'footer_opt_sidebar_bottom_2',
+				'type'       => 'slider',
+				'title'      => esc_html__( 'Column width 2', 'thost' ),
+				'default'    => 3,
+				'min'        => 1,
+				'max'        => 12,
+				'dependency' => array( 'footer_opt_sidebar_bottom', 'not-any', '0,1' )
+			),
+
+			// column width 3
+			array(
+				'id'         => 'footer_opt_sidebar_bottom_3',
+				'type'       => 'slider',
+				'title'      => esc_html__( 'Column width 3', 'thost' ),
+				'default'    => 3,
+				'min'        => 1,
+				'max'        => 12,
+				'dependency' => array( 'footer_opt_sidebar_bottom', 'not-any', '0,1,2' )
+			),
+
+			// column width 4
+			array(
+				'id'         => 'footer_opt_sidebar_bottom_4',
+				'type'       => 'slider',
+				'title'      => esc_html__( 'Column width 4', 'thost' ),
+				'default'    => 3,
+				'min'        => 1,
+				'max'        => 12,
+				'dependency' => array( 'footer_opt_sidebar_bottom', 'not-any', '0,1,2,3' )
 			),
 		)
 	) );

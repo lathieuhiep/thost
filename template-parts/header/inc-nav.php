@@ -1,10 +1,9 @@
 <?php
-$sticky_menu = thost_get_option( 'menu_option_sticky', '1' );
 $logo = thost_get_option( 'general_opt_logo' );
 $cart = thost_get_option( 'menu_option_cart', '1' );
 ?>
 
-<nav id="site-navigation" class="main-navigation<?php echo esc_attr( $sticky_menu == '1' ? ' active-sticky-nav' : '' ); ?>">
+<nav id="site-navigation" class="main-navigation">
     <div class="site-navbar navbar-expand-lg">
         <div class="container">
             <div class="site-navigation_warp d-flex justify-content-lg-end">

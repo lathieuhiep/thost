@@ -253,27 +253,17 @@ function thost_get_form_cf7(): array {
 	return $options;
 }
 
-// Share Facebook
-function thost_post_share(): void {
-	?>
-	<div class="site-post-share">
-		<iframe src="https://www.facebook.com/plugins/like.php?href=<?php the_permalink(); ?>&width=150&layout=button&action=like&size=large&share=true&height=30&appId=612555202942781" width="150" height="30" style="border:none;overflow:hidden" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-	</div>
-	<?php
-}
-
 // Social Network
 function thost_get_social_url(): void {
 	$opt_social_networks = thost_get_option('social_network_opt_list', '');
 
     if ( !empty( $opt_social_networks ) ) :
 	    foreach ( $opt_social_networks as $item ) :
+            $color = $item['color'];
         ?>
-            <div class="social-network-item">
-                <a href="<?php echo esc_url( $item['url'] ); ?>" target="_blank">
-                    <i class="<?php echo $item['icon']; ?>"></i>
-                </a>
-            </div>
+            <a class="social-network-item" href="<?php echo esc_url( $item['url'] ); ?>" target="_blank" <?php echo $color ? 'style="color: ' . $color . '"' : ''; ?>>
+                <i class="<?php echo $item['icon']; ?>"></i>
+            </a>
         <?php
 
         endforeach;

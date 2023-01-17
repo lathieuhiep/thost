@@ -5,6 +5,9 @@
 
 // Include any default variable overrides here
 
+// body
+$body-bg: $background-body;
+
 // stylelint-enable value-keyword-case
 $font-family-sans-serif: $font-primary;
 $font-family-monospace: $font-primary;
@@ -39,7 +42,7 @@ $h6-font-size: $h6-font-size;
 // headings-variables
 $headings-margin-bottom: 1.2rem;
 $headings-font-weight: 700;
-
+$headings-line-height: 1.6;
 
 // Paragraphs
 //
@@ -61,7 +64,7 @@ $container-max-widths: (
         md: 720px,
         lg: 960px,
         xl: 1180px,
-        xxl: 1220px
+        xxl: 1222px
 ) !default;
 
 // Include remainder of required Bootstrap stylesheets

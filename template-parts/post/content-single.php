@@ -1,5 +1,4 @@
 <?php
-$share_post = thost_get_option('single_opt_share_post', '1');
 $show_related = thost_get_option('single_opt_related_post', '1');
 ?>
 
@@ -47,12 +46,6 @@ $show_related = thost_get_option('single_opt_related_post', '1');
             <?php endif; ?>
         </div>
     </div>
-
-    <?php
-    if ( $share_post == '1' ) :
-        thost_post_share();
-    endif;
-    ?>
 </div>
 
 <?php

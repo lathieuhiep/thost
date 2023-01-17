@@ -2,12 +2,14 @@
 
 <?php if ( !is_404() ) : ?>
 
-<footer class="site-footer">
-    <?php
-    get_template_part( 'template-parts/footer/inc','multi-column' );
-
-    get_template_part( 'template-parts/footer/inc','copyright' );
-    ?>
+<footer class="footer">
+    <div class="container">
+	    <?php
+	    get_template_part( 'template-parts/footer/inc','top' );
+	    get_template_part( 'template-parts/footer/inc','mid' );
+	    get_template_part( 'template-parts/footer/inc','bottom' );
+	    ?>
+    </div>
 </footer>
 
 <?php

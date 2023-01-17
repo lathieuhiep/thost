@@ -13,37 +13,6 @@ function thost_favicon(): void {
     echo '<link rel="shortcut icon" href="' . esc_url( $favicon_url ) . '" type="image/x-icon" sizes="16x16" />';
 }
 
-// add property
-add_action( 'wp_head', 'thost_opengraph', 5 );
-function thost_opengraph(): void {
-	global $post;
-
-	if ( is_single() ) :
-		if ( has_post_thumbnail( $post->ID ) ) :
-			$img_src = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-		else :
-			$img_src = get_theme_file_uri( '/images/no-image.png' );
-		endif;
-
-		$excerpt = $post->post_excerpt;
-
-		if ( $excerpt ) :
-			$excerpt = strip_tags( $post->post_excerpt );
-			$excerpt = str_replace( "", "'", $excerpt );
-		else :
-			$excerpt = get_bloginfo( 'description' );
-		endif;
-
-		?>
-		<meta property="og:url" content="<?php the_permalink(); ?>" />
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="<?php the_title(); ?>" />
-		<meta property="og:description" content="<?php echo esc_attr( $excerpt ); ?>" />
-		<meta property="og:image" content="<?php echo esc_url( $img_src ); ?>" />
-	<?php
-	endif;
-}
-
 // Sanitize Pagination
 add_action( 'navigation_markup_template', 'thost_sanitize_pagination' );
 function thost_sanitize_pagination( $thost_content ): string {

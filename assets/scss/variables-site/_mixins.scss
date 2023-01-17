@@ -4,9 +4,13 @@
   list-style: none;
 }
 
-@mixin box($width, $height: $width) {
+@mixin box($width, $height: $width, $line-height: 0) {
   width: $width;
   height: $height;
+
+  @if $line-height != 0 {
+    line-height: $line-height;
+  }
 }
 
 @mixin square($size, $radius: 0) {
