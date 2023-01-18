@@ -25,7 +25,8 @@ if ( class_exists( 'CSF' ) ) {
 		'footer_after'        => '<pre>Contact me:<br />Zalo/Phone: 0975458209 - Skype: lathieuhiep - Facebook: <a href="https://www.facebook.com/lathieuhiep" target="_blank">La Khắc Điệp</a></pre>',
 	) );
 
-	// Create a section general
+	//
+	// -> Create a section general
 	CSF::createSection( $thost_prefix, array(
 		'title'  => esc_html__( 'General', 'thost' ),
 		'icon'   => 'fas fa-cog',
@@ -34,7 +35,7 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'      => 'general_opt_favicon',
 				'type'    => 'media',
-				'title'   => esc_html__( 'Upload Image Favicon', 'thost' ),
+				'title'   => esc_html__( 'Favicon', 'thost' ),
 				'library' => 'image',
 				'url'     => false
 			),
@@ -43,7 +44,7 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'      => 'general_opt_logo',
 				'type'    => 'media',
-				'title'   => esc_html__( 'Upload Logo', 'thost' ),
+				'title'   => esc_html__( 'Logo', 'thost' ),
 				'library' => 'image',
 				'url'     => false
 			),
@@ -52,7 +53,7 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'         => 'general_opt_loading',
 				'type'       => 'switcher',
-				'title'      => esc_html__( 'website loader', 'thost' ),
+				'title'      => esc_html__( 'Loader', 'thost' ),
 				'text_on'    => esc_html__( 'Yes', 'thost' ),
 				'text_off'   => esc_html__( 'No', 'thost' ),
 				'text_width' => 80,
@@ -62,7 +63,7 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'         => 'general_opt_image_loading',
 				'type'       => 'media',
-				'title'      => esc_html__( 'Upload Image Loading', 'thost' ),
+				'title'      => esc_html__( 'Loading', 'thost' ),
 				'subtitle'   => esc_html__( 'Use file .git', 'thost' ) . ' <a href="https://loading.io/" target="_blank">loading.io</a>',
 				'dependency' => array( 'general_opt_loading', '==', 'true' ),
 				'url'        => false
@@ -72,11 +73,40 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'         => 'general_opt_back_to_top',
 				'type'       => 'switcher',
-				'title'      => esc_html__( 'Use Back To Top', 'thost' ),
+				'title'      => esc_html__( 'Back To Top', 'thost' ),
 				'text_on'    => esc_html__( 'Yes', 'thost' ),
 				'text_off'   => esc_html__( 'No', 'thost' ),
 				'text_width' => 80,
 				'default'    => true
+			),
+		)
+	) );
+
+	//
+	// ->  Create a section menu
+	CSF::createSection( $thost_prefix, array(
+		'id'     => 'menu_opt_section',
+		'icon'   => 'fas fa-bars',
+		'title'  => esc_html__( 'Menu', 'thost' ),
+		'fields' => array(
+			array(
+				'id'      => 'menu_opt_link_register_login',
+				'type'    => 'text',
+				'title'   => esc_html__( 'Link Register/Login' ),
+				'default' => '#'
+			),
+
+			array(
+				'id'      => 'menu_opt_link_target',
+				'type'    => 'select',
+				'title'   => esc_html__( 'Target', 'thost' ),
+				'options' => array(
+					'_blank'  => esc_html__( 'Blank', 'thost' ),
+					'_self'   => esc_html__( 'Self', 'thost' ),
+					'_parent' => esc_html__( 'Parent', 'thost' ),
+					'_top'    => esc_html__( 'Top', 'thost' ),
+				),
+				'default' => '_blank'
 			),
 		)
 	) );
@@ -91,10 +121,10 @@ if ( class_exists( 'CSF' ) ) {
 
 	// Category Post
 	CSF::createSection( $thost_prefix, array(
-		'parent' => 'blog_opt_section',
-		'title'  => esc_html__( 'Category', 'thost' ),
+		'parent'      => 'blog_opt_section',
+		'title'       => esc_html__( 'Category', 'thost' ),
 		'description' => esc_html__( 'Use for archive, index, page search', 'thost' ),
-		'fields' => array(
+		'fields'      => array(
 			// Sidebar
 			array(
 				'id'      => 'blog_cat_opt_sidebar',
@@ -180,9 +210,9 @@ if ( class_exists( 'CSF' ) ) {
 					),
 
 					array(
-						'id'    => 'url',
-						'type'  => 'text',
-						'title' => esc_html__('URL', 'thost'),
+						'id'      => 'url',
+						'type'    => 'text',
+						'title'   => esc_html__( 'URL', 'thost' ),
 						'default' => '#'
 					),
 
@@ -196,12 +226,12 @@ if ( class_exists( 'CSF' ) ) {
 				'default' => array(
 					array(
 						'icon' => 'fab fa-facebook-f',
-						'url' => '#',
+						'url'  => '#',
 					),
 
 					array(
 						'icon' => 'fab fa-youtube',
-						'url' => '#',
+						'url'  => '#',
 					),
 				)
 			),

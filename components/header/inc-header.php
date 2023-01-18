@@ -1,6 +1,7 @@
 <?php
 $logo = thost_get_option( 'general_opt_logo' );
-$cart = thost_get_option( 'menu_option_cart', '1' );
+$opt_link_register_login = thost_get_option( 'menu_opt_link_register_login' );
+$opt_link_target = thost_get_option( 'menu_opt_link_target' );
 ?>
 
 <header class="global-header">
@@ -34,8 +35,10 @@ $cart = thost_get_option( 'menu_option_cart', '1' );
         </div>
 
         <div class="main-nav__action">
-            <a href="#" class="register"><?php esc_html_e('Đăng kí', 'thost'); ?></a>
-            <a href="#" class="login"><?php esc_html_e('Đăng nhập', 'thost'); ?></a>
+            <a href="<?php echo esc_url( $opt_link_register_login ) ?>" class="link" target="<?php echo esc_attr( $opt_link_target ); ?>">
+                <span class="register"><?php esc_html_e('Đăng kí', 'thost'); ?></span>
+                <span class="login"><?php esc_html_e('Đăng nhập', 'thost'); ?></span>
+            </a>
         </div>
     </nav>
 </header>

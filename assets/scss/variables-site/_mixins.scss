@@ -63,3 +63,9 @@
   grid-gap: $gap;
   grid-template-columns: $columns;
 }
+
+@mixin linear-gradient($color-one, $color-two, $degrees) {
+  background-image: -moz-linear-gradient($color-one, $color-two 0%, $degrees 100%);
+  background-image: -webkit-linear-gradient($color-one, $color-two 0%, $degrees 100%);
+  background-image: -ms-linear-gradient($color-one, $color-two 0%, $degrees 100%);
+}
