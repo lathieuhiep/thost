@@ -1,3 +1,23 @@
+.global-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.admin-bar {
+  .global-header {
+    @media (min-width: 783px) {
+      top: 32px;
+    }
+
+    @media (max-width: 782px) {
+      top: 64px;
+    }
+  }
+}
+
 .main-nav {
   display: grid;
   grid-gap: 10px;
