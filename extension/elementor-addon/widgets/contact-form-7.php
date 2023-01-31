@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class thost_Elementor_Addon_Contact_Form_7 extends Widget_Base {
+class THost_Elementor_Addon_Contact_Form_7 extends Widget_Base {
 
 	public function get_categories() {
 		return array( 'my-theme' );

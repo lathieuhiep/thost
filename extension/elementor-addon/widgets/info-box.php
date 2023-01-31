@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-class thost_Elementor_Addon_Info_Box extends Widget_Base {
+class THost_Elementor_Addon_Info_Box extends Widget_Base {
 
 	public function get_categories(): array {
 		return array( 'my-theme' );

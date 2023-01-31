@@ -18,6 +18,8 @@ function thost_add_elementor_widget_categories( $elements_manager ): void {
 add_action( 'elementor/widgets/register', 'thost_register_widget_elementor_addon' );
 function thost_register_widget_elementor_addon( $widgets_manager ): void {
 	// include add on
+	require get_parent_theme_file_path( '/extension/elementor-addon/widgets/price-table.php' );
+
 	require get_parent_theme_file_path( '/extension/elementor-addon/widgets/slides.php' );
 	require get_parent_theme_file_path( '/extension/elementor-addon/widgets/about-text.php' );
 	require get_parent_theme_file_path( '/extension/elementor-addon/widgets/post-carousel.php' );
@@ -28,14 +30,16 @@ function thost_register_widget_elementor_addon( $widgets_manager ): void {
 	require get_parent_theme_file_path( '/extension/elementor-addon/widgets/info-box.php' );
 
 	// register add on
-	$widgets_manager->register( new \thost_Elementor_Addon_Slides() );
-	$widgets_manager->register( new \thost_Elementor_Addon_About_Text() );
-	$widgets_manager->register( new \thost_Elementor_Addon_Post_Carousel() );
-	$widgets_manager->register( new \thost_Elementor_Addon_Post_Grid() );
-	$widgets_manager->register( new \thost_Elementor_Addon_Testimonial_Slider() );
-	$widgets_manager->register( new \thost_Elementor_Addon_Carousel_Images() );
-	$widgets_manager->register( new \thost_Elementor_Addon_Contact_Form_7() );
-	$widgets_manager->register( new \thost_Elementor_Addon_Info_Box() );
+	$widgets_manager->register( new \THost_Elementor_Addon_Price_Table() );
+
+	$widgets_manager->register( new \THost_Elementor_Addon_Slides() );
+	$widgets_manager->register( new \THost_Elementor_Addon_About_Text() );
+	$widgets_manager->register( new \THost_Elementor_Addon_Post_Carousel() );
+	$widgets_manager->register( new \THost_Elementor_Addon_Post_Grid() );
+	$widgets_manager->register( new \THost_Elementor_Addon_Testimonial_Slider() );
+	$widgets_manager->register( new \THost_Elementor_Addon_Carousel_Images() );
+	$widgets_manager->register( new \THost_Elementor_Addon_Contact_Form_7() );
+	$widgets_manager->register( new \THost_Elementor_Addon_Info_Box() );
 }
 
 // Register scripts
