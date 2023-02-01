@@ -1,3 +1,29 @@
 .element-price-table {
-  color: $color-brilliant-white;
+  .item {
+    &__box {
+      padding: 30% 2rem;
+      position: relative;
+      height: 100%;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-color: #1b104a;
+      background-clip: padding-box;
+
+      &:before {
+        margin: -2px;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: inherit;
+        background: #6707be;
+        background: -moz-linear-gradient(0deg, #6707be 0%, #f609ad 100%);
+        background: -webkit-linear-gradient(0deg, #6707be 0%,#f609ad 100%);
+        background: linear-gradient(0deg, #6707be 0%,#f609ad 100%);
+      }
+    }
+  }
 }

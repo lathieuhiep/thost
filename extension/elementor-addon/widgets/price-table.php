@@ -109,6 +109,40 @@ class THost_Elementor_Addon_Price_Table extends Widget_Base {
 			]
 		);
 
+		$this->end_controls_section();
+
+		// Content additional options
+		$this->start_controls_section(
+			'website_link_section',
+			[
+				'label' => esc_html__( 'Website Link', 'thost' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			'website_link',
+			[
+				'label' => esc_html__( 'Link', 'thost' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => esc_html__( 'https://your-link.com', 'thost' ),
+				'options' => [ 'url', 'is_external', 'nofollow' ],
+				'default' => [
+					'url' => '#'
+				],
+				'label_block' => true,
+			]
+		);
+
+		$this->add_control(
+			'text_link',
+			[
+				'label' => esc_html__( 'Text Link', 'thost' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Xem thêm', 'thost' ),
+				'label_block' => true,
+			]
+		);
 
 		$this->end_controls_section();
 	}
@@ -120,7 +154,7 @@ class THost_Elementor_Addon_Price_Table extends Widget_Base {
 		<div class="element-price-table">
             <div class="row row-cols-3">
                 <?php foreach ( $settings['list'] as $index => $item ) : ?>
-                    <div class="col text-center item-<?php echo esc_attr( $item['_id'] ) ?>">
+                    <div class="col text-center item">
                         <div class="item__box">
                             <h4 class="title">
                                 <?php echo esc_html( $item['title'] ); ?>
@@ -154,6 +188,17 @@ class THost_Elementor_Addon_Price_Table extends Widget_Base {
                     </div>
                 <?php endforeach; ?>
             </div>
+
+            <?php
+            if ( ! empty( $settings['website_link']['url'] ) ):
+	            $this->add_link_attributes( 'website_link', $settings['website_link'] );
+            ?>
+                <div class="element-price-table__bottom">
+                    <a <?php echo $this->get_render_attribute_string( 'website_link' ); ?>>
+                        <?php esc_html( $settings['text_link'] ) ?>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
 
 		<?php
